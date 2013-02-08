@@ -19,7 +19,7 @@ typedef NS_ENUM(NSUInteger, UIDeviceFamily) {
 @interface UIDevice (Hardware)
 
 - (NSString *)modelIdentifier;
-- (NSString *)modelName;
+- (NSString *)modelNameMatched;
 - (UIDeviceFamily)deviceFamily;
 
 @end

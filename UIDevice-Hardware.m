@@ -30,7 +30,7 @@
     return [self getSysInfoByName:"hw.machine"];
 }
 
-- (NSString *)modelName
+- (NSString *)modelNameMatched
 {
     NSString *platform = [self modelIdentifier];
     
@@ -46,7 +46,7 @@
     if ([platform isEqualToString:@"iPhone5,1"])    return @"iPhone 5 (GSM)";
     if ([platform isEqualToString:@"iPhone5,2"])    return @"iPhone 5 (Global)";
     
-    if ([platform hasPrefix:@"iPhone"])             return @"Unknown iPhone";
+//    if ([platform hasPrefix:@"iPhone"])             return @"Unknown iPhone";
     
     // iPad http://theiphonewiki.com/wiki/IPad
     
@@ -68,7 +68,7 @@
     if ([platform isEqualToString:@"iPad2,6"])      return @"iPad mini 1G (GSM)";
     if ([platform isEqualToString:@"iPad2,7"])      return @"iPad mini 1G (Global)";
     
-    if ([platform hasPrefix:@"iPad"])               return @"Unknown iPad";
+//    if ([platform hasPrefix:@"iPad"])               return @"Unknown iPad";
     
     // iPod http://theiphonewiki.com/wiki/IPod
     
@@ -78,7 +78,7 @@
     if ([platform isEqualToString:@"iPod4,1"])      return @"iPod touch 4G";
     if ([platform isEqualToString:@"iPod5,1"])      return @"iPod touch 5G";
     
-    if ([platform hasPrefix:@"iPod"])               return @"Unknown iPod";
+//    if ([platform hasPrefix:@"iPod"])               return @"Unknown iPod";
     
     // Simulator
     if ([platform hasSuffix:@"86"] || [platform isEqual:@"x86_64"])
@@ -87,7 +87,8 @@
         return (smallerScreen ? @"iPhone Simulator" : @"iPad Simulator");
     }
     
-    return @"Unknown Device";
+//    return @"Unknown Device";
+	return  nil;
 }
 
 - (UIDeviceFamily) deviceFamily
